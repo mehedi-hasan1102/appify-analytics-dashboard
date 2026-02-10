@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Appify Analytics Dashboard
+
+A modern analytics dashboard built with Next.js App Router. It includes KPI cards, interactive charts, and filterable views backed by mock API routes for rapid UI development.
+
+## Highlights
+
+- Dashboard shell with sidebar and header layout
+- KPI summary cards and chart cards
+- Client-side filters and state management
+- Mock API routes for stats, revenue, users, orders, and traffic
+- TypeScript-first codebase with reusable UI components
+
+## Tech Stack
+
+- Next.js (App Router)
+- React
+- TypeScript
+- Tailwind CSS
+
+## Project Structure
+
+```
+app/
+  api/
+    orders/route.ts
+    revenue/route.ts
+    stats/route.ts
+    traffic/route.ts
+    users/route.ts
+  dashboard/page.tsx
+  layout.tsx
+  page.tsx
+src/
+  components/
+    dashboard/
+    layout/
+  lib/
+    mockData.ts
+  store/
+    dashboardStore.ts
+  types/
+    dashboard.ts
+```
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` - Start the development server
+- `npm run build` - Build for production
+- `npm run start` - Run the production build
+- `npm run lint` - Run ESLint
 
-## Learn More
+## Data and API
 
-To learn more about Next.js, take a look at the following resources:
+This project uses mock data defined in `src/lib/mockData.ts`. The App Router API routes under `app/api/*` return these mock datasets to support chart rendering and KPI calculations during development.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Customization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Update dashboard UI in `src/components/dashboard`
+- Adjust layout in `src/components/layout`
+- Modify data shape in `src/types/dashboard.ts`
+- Swap mock data with real APIs by replacing handlers in `app/api/*/route.ts`
 
-## Deploy on Vercel
+## Roadmap
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Real authentication and role-based access
+- Live analytics API integration
+- Export and share options for KPI snapshots
+- Notification rules and alerting
+- Expanded test coverage for charts and filters
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+Add a license file if you plan to open-source this project.
