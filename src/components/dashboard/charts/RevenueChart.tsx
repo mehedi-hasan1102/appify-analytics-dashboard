@@ -27,7 +27,10 @@ const RevenueChart = ({ data }: RevenueChartProps) => (
           borderRadius: 12,
           borderColor: "#e2e8f0",
         }}
-        formatter={(value: number) => [`$${value.toLocaleString()}`, "Revenue"]}
+        formatter={(value) => {
+          const safeValue = typeof value === "number" ? value : 0;
+          return [`$${safeValue.toLocaleString()}`, "Revenue"];
+        }}
       />
       <Line
         type="monotone"
